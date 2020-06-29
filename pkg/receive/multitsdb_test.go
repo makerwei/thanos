@@ -25,8 +25,7 @@ import (
 )
 
 func TestMultiTSDB(t *testing.T) {
-	defer leaktest.CheckTimeout(t, 10*time.Second)
-
+	defer leaktest.CheckTimeout(t, 10*time.Second)()
 	dir, err := ioutil.TempDir("", "test")
 	testutil.Ok(t, err)
 	defer func() { testutil.Ok(t, os.RemoveAll(dir)) }()

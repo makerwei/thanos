@@ -22,6 +22,7 @@ import (
 // it will be still enabled for all spans within this span.
 func TestContextTracing_ClientEnablesTracing(t *testing.T) {
 	defer leaktest.CheckTimeout(t, 10*time.Second)()
+()
 
 	m := &basictracer.InMemorySpanRecorder{}
 	r := &forceRecorder{wrapped: m}
